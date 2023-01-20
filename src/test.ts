@@ -7,6 +7,7 @@ const testPassword = () => {
         const size = Math.floor(Math.random() * 15);
         const minNumbers = Math.floor(Math.random() * size);
         const minSpecialCharacters = Math.floor(Math.random() * (size - minNumbers));
+        console.log(size, minNumbers, minSpecialCharacters);
         
         const passwordParams: PasswordGenerator = {
             size: size,
@@ -14,16 +15,16 @@ const testPassword = () => {
             minSpecialCharacters: minSpecialCharacters
         }
 
-        const primitivePassword = createRandomPass(size, minNumbers, minSpecialCharacters);
+        const generatedPassword = createRandomPass(size, minNumbers, minSpecialCharacters);
 
-        const numbersAmount: string[] = primitivePassword.passwordArray.filter((el: string) => numbers.includes(el));
-        const specialCharactersAmount: string[] = primitivePassword.passwordArray.filter((el: string) => specialCharacters.includes(el));
+        const numbersAmount: string[] = generatedPassword.passwordArray.filter((el: string) => numbers.includes(el));
+        const specialCharactersAmount: string[] = generatedPassword.passwordArray.filter((el: string) => specialCharacters.includes(el));
 
         if ((numbersAmount.length >= minNumbers) && (specialCharactersAmount.length >= minSpecialCharacters)) {
             console.log(i + 1, 'SUCCESS');
         } else {
             console.log(i + 1, 'ERROR');
-            console.log(primitivePassword.password, size, minNumbers, minSpecialCharacters);
+            console.log(generatedPassword.password, size, minNumbers, minSpecialCharacters);
         }
     }
 }

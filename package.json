@@ -4,8 +4,9 @@
     "description": "A command line password generator in TypeScript",
     "main": "src/index.ts",
     "scripts": {
-        "run": "ts-node src/index.ts",
-        "test": "ts-node src/test.ts"
+        "start": "ts-node src/index.ts",
+        "test": "ts-node src/test.ts",
+        "watchword-help": "ts-node src/help.ts"
     },
     "keywords": [
         "password",
