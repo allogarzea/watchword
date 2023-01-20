@@ -1,0 +1,28 @@
+{
+    "name": "watchword",
+    "version": "0.0.1",
+    "description": "A command line password generator in TypeScript",
+    "main": "src/index.ts",
+    "scripts": {
+        "run": "ts-node src/index.ts",
+        "test": "ts-node src/test.ts"
+    },
+    "keywords": [
+        "password",
+        "generator",
+        "typescript",
+        "passwordgenerator"
+    ],
+    "author": "Gaztea",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/heygaztea/watchword"
+    },
+    "devDependencies": {
+        "@types/node": "^18.11.18",
+        "ts-node": "^10.9.1",
+        "tslib": "^2.4.1",
+        "typescript": "^4.9.4"
+    }
+}
