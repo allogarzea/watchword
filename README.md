@@ -1,5 +1,5 @@
 # Watchword
-#### by gaztea
+###### by gaztea
 
 Command-Line Password Generator in TypeScript.
 
@@ -9,22 +9,23 @@ Command-Line Password Generator in TypeScript.
 
 You can use the default ``npm start`` command without any additional argument. By running it, you'll get a 15 digits password with, at least, 5 numbers and 5 special characters.
 
-``
-    npm start password_size minimum_amount_numbers minimum_amount_special_characters
-``
+    npm start [password_size] [minimum_amount_numbers] [minimum_amount_special_characters]
 
 
 **Help**
 
-``
+Basic instruction of the Watchword
+
+
     npm run watchword-help
-``
+
 
 **Tests**
 
-``
+Basic set of tests. Focused to developers usage.
+
     npm test
-``
+
 
 ## Features
 - [x] Create a random password.
