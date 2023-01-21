@@ -5,14 +5,18 @@ Command-Line Password Generator in TypeScript.
 
 ## Basic Commands
 
-**Get Random Password**
+### Get Random Password
 
 You can use the default ``npm start`` command without any additional argument. By running it, you'll get a 15 digits password with, at least, 5 numbers and 5 special characters.
+
+    npm start
+
+You can also add arguments to create a custom password:
 
     npm start [password_size] [minimum_amount_numbers] [minimum_amount_special_characters]
 
 
-**Help**
+### Help
 
 Basic instruction of the Watchword
 
@@ -20,9 +24,9 @@ Basic instruction of the Watchword
     npm run watchword-help
 
 
-**Tests**
+### Tests
 
-Basic set of tests. Focused to developers usage.
+Basic set of tests, aimed at the exclusive use of tool developers:
 
     npm test
 
