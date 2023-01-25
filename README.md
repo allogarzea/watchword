@@ -40,3 +40,5 @@ Basic set of tests, aimed at the exclusive use of tool developers:
 - [ ] Add a complete set of tests to improve quality assurance.
 - [ ] Improve code readability and performance.
 - [ ] Browser extension
+
+Once the basic functions are working at an acceptable level, part of the code will be translated to Kotlin and a new repository will be added. The browser extension will continue to be in Typescript while the CLI will be in Kotlin.
