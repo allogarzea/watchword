@@ -1,30 +1,33 @@
-import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from "./values";
+import { upperAlphabet, lowerAlphabet, numbers, specialCharacters, defaultPasswordParams } from "./values";
 import { argv } from 'node:process';
+import { PasswordGenerator } from "./interface";
 
-const size = argv[2];
-const minNumbers = argv[3];
-const minSpecialCharacters = argv[4];
+const userPasswordParams = {
+	size: argv[2],
+	minNumbers: argv[3],
+	minSpecialCharacters: argv[4]
+};
 
-const createRandomPass: Function = (size: number, minNumbers: number, minSpecialCharacters: number) => {
+const createRandomPass: Function = ({size, minNumbers, minSpecialCharacters}: PasswordGenerator) => {
     let passwordArray: any = [];
     let numbersAmount: number = 0;
     let specialCharactersAmount: number = 0;
     const list = [upperAlphabet, lowerAlphabet, numbers, specialCharacters]
 
     const getItem = () => {
-        const listSelector = Math.floor(Math.random() * 4);
-        const selectedList = list[listSelector]; 
+      const listSelector = Math.floor(Math.random() * 4);
+      const selectedList = list[listSelector]; 
 
-        const itemSelector = Math.floor(Math.random() * selectedList.length);
-        const selectedItem = selectedList[itemSelector];
+      const itemSelector = Math.floor(Math.random() * selectedList.length);
+      const selectedItem = selectedList[itemSelector];
 
-        if (selectedList === numbers || selectedList === specialCharacters) {
-            selectedList === numbers ? numbersAmount += 1 : specialCharactersAmount += 1
-        }
+      if (selectedList === numbers || selectedList === specialCharacters) {
+        selectedList === numbers ? numbersAmount += 1 : specialCharactersAmount += 1
+      }
         
-        return selectedItem;
+      return selectedItem;
     }
-
+  ;
     function mountPassword() {
         for (let i = 0; i < size; i++) {
             const item = getItem();
@@ -35,12 +38,12 @@ const createRandomPass: Function = (size: number, minNumbers: number, minSpecial
     mountPassword();
 
     if ((numbersAmount < minNumbers) || (specialCharactersAmount < minSpecialCharacters)) {
-        return createRandomPass(size, minNumbers, minSpecialCharacters);
+        return createRandomPass({size, minNumbers, minSpecialCharacters});
     }
 
     return { password: passwordArray.join(''), passwordArray: passwordArray };
 }
 
-export default createRandomPass;
+console.log(createRandomPass(userPasswordParams || defaultPasswordParams).password);
 
-console.log(createRandomPass(size || 15, minNumbers || 4, minSpecialCharacters || 5).password);
+export default createRandomPass;
