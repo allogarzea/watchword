@@ -1,6 +1,9 @@
 import { upperAlphabet, lowerAlphabet, numbers, specialCharacters, defaultPasswordParams } from "./values";
 import { argv } from 'node:process';
 import { PasswordGenerator } from "./interface";
+import chalk from "chalk";
+
+const log = console.log;
 
 const userPasswordParams = {
 	size: argv[2],
@@ -44,6 +47,8 @@ const createRandomPass: Function = ({size, minNumbers, minSpecialCharacters}: Pa
     return { password: passwordArray.join(''), passwordArray: passwordArray };
 }
 
-console.log(createRandomPass(userPasswordParams || defaultPasswordParams).password);
+const generatedPassword = createRandomPass(argv.length > 2 ?  userPasswordParams : defaultPasswordParams).password;
+
+log(chalk.bold(generatedPassword));
 
 export default createRandomPass;
