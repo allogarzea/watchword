@@ -1,10 +1,26 @@
-const basicHelpText = `Hey there! Welcome to Watchword \n 
-You can use 'npm start' to create a password with default parameters \n 
-Default parameters: \n
-- Password size: 15 digits \n
-- Minimum quantity of numbers: 5 digits \n
-- Minimum quantity of special characters: 5 digits \n
-If you don't want to use default values type 'npm start [password size] [minimum quantity of numbers] [minimum quantity of special characters]' \n
-e.g. 'npm start 10 5 3' \n`
+import chalk from 'chalk';
+const log = console.log;
 
-console.log(basicHelpText);
+log(`Hey there! Welcome to ${chalk.bold('Watchword')}
+
+Usage:
+
+npm start                                       create a password with default parameters 
+npm start ${chalk.bold('size numbers specialCharacters')}        create a password with custom parameters
+
+Default parameters: 
+
+- 15 digits, 
+- 5 numbers, 
+- 5 special characters
+
+Examples:
+
+command: npm start
+output: ${chalk.bold('l^U?4;h26;^2w1Q')}
+
+command: npm start 10 5 3
+output: ${chalk.bold('80$K?573*9')}
+
+`);
+
