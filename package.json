@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/heygaztea/watchword"
+    "url": "https://github.com/allogaztea/watchword"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
