@@ -4,20 +4,25 @@ import { getPassword } from '../lib/index';
 
 const bootstrap = () => {
   const { Command, Option } = commander;
-  const program = new commander.Command();
+  const program = new Command();
 
   program
     .name('watchword')
-    .description('A command line password generator in TypeScript')
-    .version('0.0.1');
+    .description('Command Line Password Generator in TypeScript')
+    .version('0.1');
   
   program
-    .addOption(new Option('-l, --length, <type>', 'set the password length').default(15))
-    .addOption(new Option('-n, --numbers, <type>', 'set the password length').default(5))
-    .addOption(new Option('-s, --special, <type>', 'display some debugging').default(5))
+    .addOption(new Option('-l, --length, <value>', 'Set the password length').default(15))
+    .addOption(new Option('-n, --numbers, <value>', 'Set the minimum amount of numbers in the password').default(5))
+    .addOption(new Option('-s, --special, <value>', 'Set the minimum amount of special characters in the password').default(5))
     .action(() => {
       const options = program.opts();
-      getPassword(options.length, options.numbers, options.special)
+      const passwordParams = {
+        length: options.length,
+        minNumbers: options.numbers,
+        minSpecialCharacters: options.special
+      }
+      getPassword(passwordParams);
     });
   
   program.parse(process.argv);

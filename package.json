@@ -1,7 +1,7 @@
 {
   "name": "watchword",
   "version": "0.1",
-  "description": "A command line password generator in TypeScript",
+  "description": "Command Line Password Generator in TypeScript",
   "bin": {
     "watchword": "bin/options.js"
   },

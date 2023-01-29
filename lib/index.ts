@@ -40,11 +40,11 @@ const createRandomPass: Function = ({length, minNumbers, minSpecialCharacters}: 
     return passwordArray.join('');
 }
 
-const getPassword = (length: number, numbers?: number, characters?: number) => {
+const getPassword = ({length, minNumbers, minSpecialCharacters}: PasswordGenerator) => {
   const passwordParams = {
-    size: length,
-    minNumbers: numbers,
-    minSpecialCharacters: characters
+    length: length,
+    minNumbers: minNumbers,
+    minSpecialCharacters: minSpecialCharacters
   }  
   const generatedPassword = createRandomPass(passwordParams);
   log(chalk.bold(generatedPassword));
