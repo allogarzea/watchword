@@ -1,6 +1,7 @@
 import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from "./values";
 import { PasswordGenerator } from "./interface";
 import chalk from "chalk";
+import { checkForErrorsInParameters } from "./check";
 
 const log = console.log;
 
@@ -45,9 +46,12 @@ const getPassword = ({length, minNumbers, minSpecialCharacters}: PasswordGenerat
     length: length,
     minNumbers: minNumbers,
     minSpecialCharacters: minSpecialCharacters
-  }  
-  const generatedPassword = createRandomPass(passwordParams);
-  log(chalk.bold(generatedPassword));
+  }
+   
+  if (checkForErrorsInParameters(passwordParams)) {
+    const generatedPassword = createRandomPass(passwordParams);
+    log(chalk.bold(generatedPassword));
+  } 
 }
 
 export {createRandomPass, getPassword};

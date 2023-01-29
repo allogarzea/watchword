@@ -13,7 +13,7 @@
   },
   "scripts": {
     "build": "tsc",
-    "prepublish": "npm tun build"
+    "prepublish": "npm run build"
   },
   "keywords": [
     "password",
