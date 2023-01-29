@@ -19,7 +19,7 @@ sudo npm install -g ./
 
 ### Quick Start
 
-You can use the default ``watchword`` command without any additional argument. By running it, you'll get a 15 digits password with, at least, 5 numbers and 5 special characters.
+You can use the default ``watchword`` command without any additional argument. By running it, you'll get a 15 digits password with, at least, 5 numbers and 5 special characters. 
 ```sh
 watchword
 ```
@@ -33,14 +33,22 @@ watchword --help
 ```
 All Options:
 
-    -l, --length, <value>   Set the password length (default: 15)
-    -n, --numbers, <value>  Set the minimum amount of numbers in the password (default: 5)
-    -s, --special, <value>  Set the minimum amount of special characters in the password (default: 5)
-    -h, --help              display help for command
     -V, --version           output the version number
+    -l, --length, <value>   set the password length (default: 15)
+    -n, --numbers <value>   set the minimum amount of numbers in the password (default: 5)
+    -s, --special <value>   set the minimum amount of special characters in the password (default: 5)
+    -h, --help              display help for command
 
-## Features
-- [x] Create a random password.
-- [x] Able to use custom options provided as arguments in CLI.
 
-You can check the status of new features, improvements and fixes in our [kanban board](https://github.com/users/allogaztea/projects/1).
+## Clipboard
+
+We use [clipboard-sys](https://github.com/udarrr/clipboard-sys) to auto copy the generated password to your clipboard. It's cross plataform and supports:
+
+- MacOS
+- Windows
+- Linux (xclip supporting systems) should be installed [xclip](https://github.com/astrand/xclip)
+
+## Issues
+You can ask for new features, improvementes and bug fixes in our [issues tab](https://github.com/allogaztea/watchword/issues)
+
+You can also check the status of our current issues in our [kanban board](https://github.com/users/allogaztea/projects/1).
