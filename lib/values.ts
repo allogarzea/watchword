@@ -14,17 +14,9 @@ const specialCharacters = [
     '!', '@', '#', '$', '%', '^', '&', '*', '?', ';', ':'
 ]
 
-// Default values
-const defaultPasswordParams = {
-	size: 15,
-	minNumbers: 5,
-	minSpecialCharacters: 5
-};
-
 export {
     upperAlphabet,
     lowerAlphabet,
     numbers,
-    specialCharacters,
-	defaultPasswordParams
+    specialCharacters
 }

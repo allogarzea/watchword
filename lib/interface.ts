@@ -1,9 +1,5 @@
 export interface PasswordGenerator {
-    size: number;
+    length: number;
     minNumbers: number;
     minSpecialCharacters: number;
-}
-
-export interface PasswordGeneratorParameters {
-    size: number[];
-}
+};
