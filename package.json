@@ -1,12 +1,19 @@
 {
   "name": "watchword",
-  "version": "0.0.1",
+  "version": "0.1",
   "description": "A command line password generator in TypeScript",
-  "main": "src/index.ts",
+  "bin": {
+    "watchword": "bin/options.js"
+  },
+  "engines": {
+    "node": ">= 12.9.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "test": "ts-node src/test.ts",
-    "watchword-help": "ts-node src/help.ts"
+    "build": "tsc",
+    "prepublish": "npm tun build"
   },
   "keywords": [
     "password",
@@ -20,6 +27,9 @@
     "type": "git",
     "url": "https://github.com/allogaztea/watchword"
   },
+  "bugs": {
+    "url": "https://github.com/allogaztea/watchword/issues"
+  },
   "devDependencies": {
     "@types/node": "^18.11.18",
     "ts-node": "^10.9.1",
@@ -27,6 +37,7 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
-    "chalk": "^4.1.2"
+    "chalk": "^4.1.2",
+    "commander": "^10.0.0"
   }
 }

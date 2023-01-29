@@ -1,17 +1,10 @@
-import { upperAlphabet, lowerAlphabet, numbers, specialCharacters, defaultPasswordParams } from "./values";
-import { argv } from 'node:process';
+import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from "./values";
 import { PasswordGenerator } from "./interface";
 import chalk from "chalk";
 
 const log = console.log;
 
-const userPasswordParams = {
-	size: argv[2],
-	minNumbers: argv[3],
-	minSpecialCharacters: argv[4]
-};
-
-const createRandomPass: Function = ({size, minNumbers, minSpecialCharacters}: PasswordGenerator) => {
+const createRandomPass: Function = ({length, minNumbers, minSpecialCharacters}: PasswordGenerator) => {
     let passwordArray: any = [];
     let numbersAmount: number = 0;
     let specialCharactersAmount: number = 0;
@@ -32,7 +25,7 @@ const createRandomPass: Function = ({size, minNumbers, minSpecialCharacters}: Pa
     }
   ;
     function mountPassword() {
-        for (let i = 0; i < size; i++) {
+        for (let i = 0; i < length; i++) {
             const item = getItem();
             passwordArray.push(item);
         }
@@ -41,14 +34,20 @@ const createRandomPass: Function = ({size, minNumbers, minSpecialCharacters}: Pa
     mountPassword();
 
     if ((numbersAmount < minNumbers) || (specialCharactersAmount < minSpecialCharacters)) {
-        return createRandomPass({size, minNumbers, minSpecialCharacters});
+        return createRandomPass({length, minNumbers, minSpecialCharacters});
     }
 
-    return { password: passwordArray.join(''), passwordArray: passwordArray };
+    return passwordArray.join('');
 }
 
-const generatedPassword = createRandomPass(argv.length > 2 ?  userPasswordParams : defaultPasswordParams).password;
+const getPassword = (length: number, numbers?: number, characters?: number) => {
+  const passwordParams = {
+    size: length,
+    minNumbers: numbers,
+    minSpecialCharacters: characters
+  }  
+  const generatedPassword = createRandomPass(passwordParams);
+  log(chalk.bold(generatedPassword));
+}
 
-log(chalk.bold(generatedPassword));
-
-export default createRandomPass;
+export {createRandomPass, getPassword};
