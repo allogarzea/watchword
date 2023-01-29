@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import confirmationQuestion from '../commands/confirmation';
 import { PasswordGenerator } from "./interface";
 import { PARAMS_ERRORS, PARAMS_WARNING } from './messages';
 import { checkArgumentsSum, checkForNegativeNumber, checkForZeroValue, compareValueWithMinimumValue } from './operations';
@@ -12,54 +13,67 @@ const checkForErrorsInParameters = (passwordParams: PasswordGenerator) => {
     // LENGTH ERRORS
     if (checkForNegativeNumber(length)) {
         log(chalk.red(PARAMS_ERRORS.LENGTH_IS_NEGATIVE));
-        return false;
+        return 'stop';
     } if (checkForZeroValue(length)) {
         log(chalk.red(PARAMS_ERRORS.LENGTH_IS_ZERO));
-        return false;
+        return 'stop';
     } 
 
     // NUMBER ERRORS
     if (checkForNegativeNumber(minNumbers)) {
         log(chalk.red(PARAMS_ERRORS.NUMBER_ARGUMENT_IS_NEGATIVE));
-        return false;
+        return 'stop';
     } 
 
     // SPECIAL CHARACTERS ERRORS
     if (checkForNegativeNumber(minSpecialCharacters)) {
         log(chalk.red(PARAMS_ERRORS.SPECIAL_CHARACTERS_ARGUMENT_IS_NEGATIVE));
-        return false;
+        return 'stop';
     } 
 
     // ALL ARGUMENTS ERRORS
     if (checkArgumentsSum(passwordParams)) {
         log(chalk.red(PARAMS_ERRORS.NUMBERS_PLUS_SPECIAL_BIGGER_THAN_LENGTH));
-        return false;
+        return 'stop';
     } 
 
     // LENGTH WARNING
     if (compareValueWithMinimumValue(length, recommendedValues.length.minimum)) {
         log(chalk.yellow(PARAMS_WARNING.LENGTH_IS_LESS_THAN_RECOMMENDED));
-        return false;
+        return 'warn';
     } 
 
     // NUMBER WARNING
     if (compareValueWithMinimumValue(minNumbers, recommendedValues.numbers.minimum)) {
         log(chalk.yellow(PARAMS_WARNING.NUMBER_IS_LESS_THAN_RECOMMENDED));
-        return false;
+        return 'warn';
     } 
 
     // SPECIAL CHARACTERS WARNING
     if (compareValueWithMinimumValue(minSpecialCharacters, recommendedValues.specialCharacters.minimum)) {
         log(chalk.yellow(PARAMS_WARNING.SPECIAL_CHARACTERS_IS_LESS_THAN_RECOMMENDED));
-        return false;
+        return 'warn';
     } 
 
     // NO ERRORS OR WARNINGS
     else {
-        return true;
+        return 'keep';
+    }
+}
+
+const validateParams = (passwordParams: PasswordGenerator) => {
+    const response = checkForErrorsInParameters(passwordParams);
+    switch(response) {
+        case 'stop':
+            return false;
+        case 'warn':
+            return confirmationQuestion(passwordParams);
+        case 'keep':
+        default:
+            return true;
     }
 }
 
 export {
-    checkForErrorsInParameters
+    validateParams
 }
