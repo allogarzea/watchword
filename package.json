@@ -3,7 +3,7 @@
   "version": "0.1",
   "description": "Command Line Password Generator in TypeScript",
   "bin": {
-    "watchword": "bin/options.js"
+    "watchword": "bin/watchword.js"
   },
   "engines": {
     "node": ">= 12.9.0"

@@ -1,9 +1,5 @@
-import chalk from "chalk";
-import { validateParams } from "./validation/check";
 import { PasswordGenerator } from "./interface";
-import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from "./values";
-
-const log = console.log;
+import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from "./constants";
 
 const createRandomPass: Function = ({length, minNumbers, minSpecialCharacters}: PasswordGenerator) => {
     let passwordArray: any = [];
@@ -41,11 +37,4 @@ const createRandomPass: Function = ({length, minNumbers, minSpecialCharacters}: 
     return passwordArray.join('');
 }
 
-const getPassword = (passwordParams: PasswordGenerator) => {
-  if (validateParams(passwordParams)) {
-    const generatedPassword = createRandomPass(passwordParams);
-    log(chalk.bold(generatedPassword));
-  }
-}
-
-export {createRandomPass, getPassword};
+export { createRandomPass };

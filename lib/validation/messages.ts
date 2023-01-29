@@ -1,5 +1,7 @@
 // ERROR MESSAGES
 
+import { recommendedValues } from "../constants";
+
 const LENGTH_IS_ZERO = "ERROR: Check the length argument, it must be greater than zero";
 const LENGTH_IS_NEGATIVE = "ERROR: Check the length argument, it must be greater than zero";
 const NUMBER_ARGUMENT_IS_NEGATIVE = "ERROR: Check the number argument, it cannot be a negative value";
@@ -17,14 +19,21 @@ const PARAMS_ERRORS = {
 
 // WARNING MESSAGES
 
-const LENGTH_IS_LESS_THAN_RECOMMENDED = "WARNING: We do not recommend that the password length be less than 12 digits"
-const NUMBER_IS_LESS_THAN_RECOMMENDED = "WARNING: We do not recommend that the password contain less than 4 numbers"
-const SPECIAL_CHARACTERS_IS_LESS_THAN_RECOMMENDED = "WARNING: We do not recommend that the password contain less than 4 special characters"
+const LENGTH_IS_LESS_THAN_RECOMMENDED = `WARNING: We do not recommend that the password length be less than ${recommendedValues.length.minimum} digits`
+const NUMBER_IS_LESS_THAN_RECOMMENDED = `WARNING: We do not recommend that the password contain less than ${recommendedValues.numbers.minimum} numbers`
+const SPECIAL_CHARACTERS_IS_LESS_THAN_RECOMMENDED = `WARNING: We do not recommend that the password contain less than ${recommendedValues.specialCharacters.minimum} special characters`
+
+const LENGTH_IS_GREATER_THAN_RECOMMENDED = `WARNING: We do not recommend that the password length be greater than ${recommendedValues.length.maximum} digits`
+const NUMBER_IS_GREATER_THAN_RECOMMENDED = `WARNING: We do not recommend that the password contain greater than ${recommendedValues.numbers.maximum} numbers`
+const SPECIAL_CHARACTERS_IS_GREATER_THAN_RECOMMENDED = `WARNING: We do not recommend that the password contain greater than ${recommendedValues.specialCharacters.maximum} special characters`
 
 const PARAMS_WARNING = {
     LENGTH_IS_LESS_THAN_RECOMMENDED,
     NUMBER_IS_LESS_THAN_RECOMMENDED,
-    SPECIAL_CHARACTERS_IS_LESS_THAN_RECOMMENDED
+    SPECIAL_CHARACTERS_IS_LESS_THAN_RECOMMENDED,
+    LENGTH_IS_GREATER_THAN_RECOMMENDED,
+    NUMBER_IS_GREATER_THAN_RECOMMENDED,
+    SPECIAL_CHARACTERS_IS_GREATER_THAN_RECOMMENDED
 }
 
 export {

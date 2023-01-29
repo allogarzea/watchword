@@ -2,8 +2,8 @@ import chalk from 'chalk';
 import confirmationQuestion from '../../commands/confirmation';
 import { PasswordGenerator } from '../interface';
 import { PARAMS_ERRORS, PARAMS_WARNING } from './messages';
-import { checkArgumentsSum, checkForNegativeNumber, checkForZeroValue, compareValueWithMinimumValue } from './operations';
-import { recommendedValues } from '../values';
+import { checkArgumentsSum, checkForNegativeNumber, checkForZeroValue, compareValueWithMaximumValue, compareValueWithMinimumValue } from './operations';
+import { recommendedValues } from '../constants';
 
 const log = console.log;
 
@@ -42,16 +42,28 @@ const checkForErrorsInParameters = (passwordParams: PasswordGenerator) => {
         log(chalk.yellow(PARAMS_WARNING.LENGTH_IS_LESS_THAN_RECOMMENDED));
         return 'warn';
     } 
+    if (compareValueWithMaximumValue(length, recommendedValues.length.maximum)) {
+        log(chalk.yellow(PARAMS_WARNING.LENGTH_IS_GREATER_THAN_RECOMMENDED));
+        return 'warn';
+    } 
 
     // NUMBER WARNING
     if (compareValueWithMinimumValue(minNumbers, recommendedValues.numbers.minimum)) {
         log(chalk.yellow(PARAMS_WARNING.NUMBER_IS_LESS_THAN_RECOMMENDED));
         return 'warn';
     } 
+    if (compareValueWithMaximumValue(minNumbers, recommendedValues.numbers.maximum)) {
+        log(chalk.yellow(PARAMS_WARNING.NUMBER_IS_GREATER_THAN_RECOMMENDED));
+        return 'warn';
+    } 
 
     // SPECIAL CHARACTERS WARNING
     if (compareValueWithMinimumValue(minSpecialCharacters, recommendedValues.specialCharacters.minimum)) {
         log(chalk.yellow(PARAMS_WARNING.SPECIAL_CHARACTERS_IS_LESS_THAN_RECOMMENDED));
+        return 'warn';
+    } 
+    if (compareValueWithMaximumValue(minNumbers, recommendedValues.numbers.maximum)) {
+        log(chalk.yellow(PARAMS_WARNING.SPECIAL_CHARACTERS_IS_GREATER_THAN_RECOMMENDED));
         return 'warn';
     } 
 

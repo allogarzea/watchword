@@ -1,6 +1,6 @@
 import * as commander from 'commander';
-import { getPassword } from '../lib';
-import { recommendedValues } from '../lib/values';
+import { getPasswordWithValidation } from '../lib/actions';
+import { recommendedValues } from '../lib/constants';
 
 const { Command, Option } = commander;
 const program = new Command();
@@ -25,7 +25,8 @@ const bootstrap = () => {
         minNumbers: options.numbers,
         minSpecialCharacters: options.special
       }
-      getPassword(passwordParams);
+      
+      getPasswordWithValidation(passwordParams);
     });
   
   program.parse(process.argv);
