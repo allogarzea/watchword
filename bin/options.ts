@@ -12,9 +12,9 @@ const bootstrap = () => {
     .version('0.1');
   
   program
-    .addOption(new Option('-l, --length, <value>', 'Set the password length').default(15))
-    .addOption(new Option('-n, --numbers, <value>', 'Set the minimum amount of numbers in the password').default(5))
-    .addOption(new Option('-s, --special, <value>', 'Set the minimum amount of special characters in the password').default(5))
+    .addOption(new Option('-l, --length <value>', 'Set the password length').default(15))
+    .addOption(new Option('-n, --numbers <value>', 'Set the minimum amount of numbers in the password').default(5))
+    .addOption(new Option('-s, --special <value>', 'Set the minimum amount of special characters in the password').default(5))
     .action(() => {
       const options = program.opts();
       const passwordParams = {
