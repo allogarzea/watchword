@@ -1,9 +1,9 @@
 import chalk from 'chalk';
-import confirmationQuestion from '../commands/confirmation';
-import { PasswordGenerator } from "./interface";
+import confirmationQuestion from '../../commands/confirmation';
+import { PasswordGenerator } from '../interface';
 import { PARAMS_ERRORS, PARAMS_WARNING } from './messages';
 import { checkArgumentsSum, checkForNegativeNumber, checkForZeroValue, compareValueWithMinimumValue } from './operations';
-import { recommendedValues } from './values';
+import { recommendedValues } from '../values';
 
 const log = console.log;
 

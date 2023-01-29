@@ -1,6 +1,6 @@
-import { PasswordGenerator } from "./interface";
+import { PasswordGenerator } from "../interface";
 
-// If returns 'true' than there is an error
+// If returns TRUE there is an Error
 
 function checkForZeroValue(value: number) {
     return value === 0 ? true : false;

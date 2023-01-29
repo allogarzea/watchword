@@ -1,5 +1,5 @@
 import chalk from "chalk";
-import { validateParams } from "./check";
+import { validateParams } from "./validation/check";
 import { PasswordGenerator } from "./interface";
 import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from "./values";
 
@@ -23,8 +23,8 @@ const createRandomPass: Function = ({length, minNumbers, minSpecialCharacters}: 
       }
         
       return selectedItem;
-    }
-  ;
+    };
+
     function mountPassword() {
         for (let i = 0; i < length; i++) {
             const item = getItem();
