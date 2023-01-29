@@ -18,7 +18,7 @@ const bootstrap = (): any => {
       .default(recommendedValues.numbers.default))
     .addOption(new Option('-s, --special <value>', 'set the minimum amount of special characters in the password')
       .default(recommendedValues.specialCharacters.default))
-    .action(async () => {
+    .action(() => {
       const options = program.opts()
       const passwordParams = {
         length: options.length,
@@ -26,7 +26,7 @@ const bootstrap = (): any => {
         minSpecialCharacters: options.special
       }
 
-      await getPasswordWithValidation(passwordParams)
+      getPasswordWithValidation(passwordParams)
     })
 
   program.parse(process.argv)

@@ -5,12 +5,12 @@ import { type PasswordParameters } from '../lib/interface'
 
 const prompt = inquirer.createPromptModule()
 
-const confirmationQuestion = async (passwordParams: PasswordParameters): Promise<any> => {
-  await prompt({
+const confirmationQuestion = (passwordParams: PasswordParameters): any => {
+  void prompt({
     type: 'confirm', name: 'confirmation', message: 'Do you want to continue: '
   }).then((answer) => {
     if (answer.confirmation === true) {
-      void getPassword(passwordParams)
+      getPassword(passwordParams)
     }
   })
 }

@@ -7,25 +7,23 @@ import { validateParams } from './validation/check'
 const log = console.log
 const { gray, bold } = chalk
 
-const copyPassword = async (password: string): Promise<any> => {
-  await clipboard.writeText(password)
+const copyPassword = (password: string): any => {
+  void clipboard.writeText(password)
   log(gray('Your password was copied to clipboard'))
 }
 
-const getPassword = async (passwordParams: PasswordParameters): Promise<any> => {
+const getPassword = (passwordParams: PasswordParameters): any => {
   const generatedPassword = createRandomPass(passwordParams)
   log(`${gray('Generated Password:')} ${bold(generatedPassword)}`)
-  await copyPassword(generatedPassword)
+  copyPassword(generatedPassword)
 }
 
-const getPasswordWithValidation = async (passwordParams: PasswordParameters): Promise<any> => {
+const getPasswordWithValidation = (passwordParams: PasswordParameters): any => {
   const validation: boolean = validateParams(passwordParams)
   if (validation) {
     const generatedPassword = createRandomPass(passwordParams)
     log(`${gray('Generated Password:')} ${bold(generatedPassword)}`)
-    await copyPassword(generatedPassword)
-  } else {
-    log('Error')
+    copyPassword(generatedPassword)
   }
 }
 
