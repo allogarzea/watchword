@@ -19,7 +19,7 @@ const getPassword = async (passwordParams: PasswordParameters): Promise<any> => 
 }
 
 const getPasswordWithValidation = async (passwordParams: PasswordParameters): Promise<any> => {
-  const validation = validateParams(passwordParams)
+  const validation: boolean = validateParams(passwordParams)
   if (validation) {
     const generatedPassword = createRandomPass(passwordParams)
     log(`${gray('Generated Password:')} ${bold(generatedPassword)}`)
