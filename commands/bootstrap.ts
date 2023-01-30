@@ -5,7 +5,7 @@ import { recommendedValues } from '../lib/constants'
 const { Command, Option } = commander
 const program = new Command()
 
-const bootstrap = (): any => {
+const bootstrap = (): void => {
   program
     .name('watchword')
     .description('Command Line Password Generator in TypeScript')

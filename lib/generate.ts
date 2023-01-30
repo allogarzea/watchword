@@ -4,7 +4,7 @@ import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from './cons
 function createRandomPass (passwordParams: PasswordParameters): string {
   const { length, minNumbers, minSpecialCharacters } = passwordParams
   const list = [upperAlphabet, lowerAlphabet, numbers, specialCharacters]
-  const passwordArray: any = []
+  const passwordArray: string[] = []
   let numbersAmount: number = 0
   let specialCharactersAmount: number = 0
 

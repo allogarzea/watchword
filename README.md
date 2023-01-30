@@ -49,6 +49,6 @@ We use [clipboard-sys](https://github.com/udarrr/clipboard-sys) to auto copy the
 - Linux (xclip supporting systems) should be installed [xclip](https://github.com/astrand/xclip)
 
 ## Issues
-You can ask for new features, improvementes and bug fixes in our [issues tab](https://github.com/allogaztea/watchword/issues)
+You can ask for new features, improvements and bug fixes in our [issues tab](https://github.com/allogaztea/watchword/issues)
 
 You can also check the status of our current issues in our [kanban board](https://github.com/users/allogaztea/projects/1).

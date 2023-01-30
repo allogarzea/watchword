@@ -7,18 +7,18 @@ import { validateParams } from './validation/check'
 const log = console.log
 const { gray, bold } = chalk
 
-const copyPassword = (password: string): any => {
+const copyPassword = (password: string): void => {
   void clipboard.writeText(password)
   log(gray('Your password was copied to clipboard'))
 }
 
-const getPassword = (passwordParams: PasswordParameters): any => {
+const getPassword = (passwordParams: PasswordParameters): void => {
   const generatedPassword = createRandomPass(passwordParams)
   log(`${gray('Generated Password:')} ${bold(generatedPassword)}`)
   copyPassword(generatedPassword)
 }
 
-const getPasswordWithValidation = (passwordParams: PasswordParameters): any => {
+const getPasswordWithValidation = (passwordParams: PasswordParameters): void => {
   const validation: boolean = validateParams(passwordParams)
   if (validation) {
     const generatedPassword = createRandomPass(passwordParams)
