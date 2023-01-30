@@ -1,2 +1,6 @@
+# PUBLISH
 node_modules/
+
+# DEVELOPMENT 
 package-lock.json
+*.js

@@ -14,9 +14,28 @@ const specialCharacters = [
     '!', '@', '#', '$', '%', '^', '&', '*', '?', ';', ':'
 ]
 
+const recommendedValues = {
+    length: {
+        minimum: 12,
+        default: 15,
+        maximum: 100
+    },
+    numbers: {
+        minimum: 4,
+        default: 5,
+        maximum: 10
+    },
+    specialCharacters: {
+        minimum: 4,
+        default: 5,
+        maximum: 10
+    },
+}
+
 export {
     upperAlphabet,
     lowerAlphabet,
     numbers,
-    specialCharacters
+    specialCharacters,
+    recommendedValues
 }

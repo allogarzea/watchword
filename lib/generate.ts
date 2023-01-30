@@ -1,8 +1,5 @@
-import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from "./values";
 import { PasswordGenerator } from "./interface";
-import chalk from "chalk";
-
-const log = console.log;
+import { upperAlphabet, lowerAlphabet, numbers, specialCharacters } from "./constants";
 
 const createRandomPass: Function = ({length, minNumbers, minSpecialCharacters}: PasswordGenerator) => {
     let passwordArray: any = [];
@@ -22,8 +19,8 @@ const createRandomPass: Function = ({length, minNumbers, minSpecialCharacters}: 
       }
         
       return selectedItem;
-    }
-  ;
+    };
+
     function mountPassword() {
         for (let i = 0; i < length; i++) {
             const item = getItem();
@@ -40,14 +37,4 @@ const createRandomPass: Function = ({length, minNumbers, minSpecialCharacters}: 
     return passwordArray.join('');
 }
 
-const getPassword = ({length, minNumbers, minSpecialCharacters}: PasswordGenerator) => {
-  const passwordParams = {
-    length: length,
-    minNumbers: minNumbers,
-    minSpecialCharacters: minSpecialCharacters
-  }  
-  const generatedPassword = createRandomPass(passwordParams);
-  log(chalk.bold(generatedPassword));
-}
-
-export {createRandomPass, getPassword};
+export { createRandomPass };
