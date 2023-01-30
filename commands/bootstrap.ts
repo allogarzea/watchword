@@ -1,4 +1,5 @@
 import * as commander from 'commander'
+import packageJSON from '../package.json'
 import { getPasswordWithValidation } from '../lib/actions'
 import { recommendedValues } from '../lib/constants'
 
@@ -9,7 +10,7 @@ const bootstrap = (): void => {
   program
     .name('watchword')
     .description('Command Line Password Generator in TypeScript')
-    .version('0.1')
+    .version(packageJSON.version)
 
   program
     .addOption(new Option('-l, --length <value>', 'set the password length')
