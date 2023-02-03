@@ -4,7 +4,7 @@
 Command-Line Password Generator in TypeScript.
 
 ## Installation
-While it's not available in npm. You can download our latest version through [releases](https://github.com/allogaztea/watchword/releases).
+While it's not available in npm, you can download our latest version through [releases](https://github.com/allogaztea/watchword/releases).
 
 Then, you'll need to access the folder and install the dependencies. To do it, run:
 ```sh
