@@ -1,4 +1,5 @@
 #!/usr/bin/env node
-import bootstrap from '../commands/bootstrap'
 
-bootstrap()
+import bootstrap from '../commands/bootstrap';
+
+bootstrap();
