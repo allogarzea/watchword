@@ -6,9 +6,12 @@ Command-Line Password Generator in TypeScript.
 
 ## Installation
 
-While it's not available in npm, you can download our latest version through [releases](https://github.com/allogaztea/watchword/releases).
-
-Then, you'll need to access the folder and install the dependencies. To do it, run:
+### npm
+```sh
+npm install -g watchword 
+```
+### Releases
+To install through via github releases, you'll need to install the dependencies. To do it, access the downloaded folder and run:
 
 ```sh
 npm install
@@ -20,7 +23,7 @@ Finally, to install the package, run:
 sudo npm install -g ./
 ```
 
-### Quick Start
+## Quick Start
 
 You can use the default `watchword` command without any additional argument. By running it, you'll get a 15 digits password with, at least, 5 numbers and 5 special characters.
 
@@ -54,7 +57,7 @@ We use [clipboard-sys](https://github.com/udarrr/clipboard-sys) to auto copy the
 
 - MacOS
 - Windows
-- Linux (xclip supporting systems) should be installed [xclip](https://github.com/astrand/xclip)
+- Linux ([xclip](https://github.com/astrand/xclip) supporting systems)
 
 ## Issues
 
