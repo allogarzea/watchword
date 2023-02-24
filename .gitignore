@@ -1,7 +1,2 @@
 # PUBLISH
 node_modules/
-
-# DEVELOPMENT 
-settings.json
-
-dist
