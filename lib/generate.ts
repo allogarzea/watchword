@@ -4,17 +4,24 @@ import {
 	lowerAlphabet,
 	numbers,
 	specialCharacters,
+	latinCharacters,
 } from './constants';
 
 function createRandomPass(passwordParams: PasswordParameters): string {
 	const { length, minNumbers, minSpecialCharacters } = passwordParams;
-	const list = [upperAlphabet, lowerAlphabet, numbers, specialCharacters];
+	const list = [
+		upperAlphabet,
+		lowerAlphabet,
+		numbers,
+		specialCharacters,
+		latinCharacters,
+	];
 	const passwordArray: string[] = [];
 	let numbersAmount: number = 0;
 	let specialCharactersAmount: number = 0;
 
 	function getItem(): string {
-		const listSelector = Math.floor(Math.random() * 4);
+		const listSelector = Math.floor(Math.random() * 5);
 		const selectedList = list[listSelector];
 
 		const itemSelector = Math.floor(Math.random() * selectedList.length);
