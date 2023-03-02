@@ -7,10 +7,13 @@ Command-Line Password Generator in TypeScript.
 ## Installation
 
 ### npm
+
 ```sh
-npm install -g watchword 
+npm install -g watchword
 ```
+
 ### Releases
+
 To install through via github releases, you'll need to install the dependencies. To do it, access the downloaded folder and run:
 
 ```sh
