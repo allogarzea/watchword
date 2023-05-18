@@ -1,5 +1,3 @@
-<!-- omit in toc -->
-
 # Contributing to Watchword
 
 First off, thanks for taking the time to contribute! ❤️
@@ -64,13 +62,11 @@ Depending on how large the project is, you may want to outsource the questioning
 
 ## I Want To Contribute
 
-> ### Legal Notice <!-- omit in toc -->
+> ### Legal Notice >
 >
 > When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
 
 ### Reporting Bugs
-
-<!-- omit in toc -->
 
 #### Before Submitting a Bug Report
 
@@ -86,8 +82,6 @@ A good bug report shouldn't leave others needing to chase you up for more inform
   - Version of the interpreter, compiler, SDK, runtime environment, package manager, depending on what seems relevant.
   - Possibly your input and the output
   - Can you reliably reproduce the issue? And can you also reproduce it with older versions?
-
-<!-- omit in toc -->
 
 #### How Do I Submit a Good Bug Report?
 
@@ -114,16 +108,12 @@ Once it's filed:
 
 This section guides you through submitting an enhancement suggestion for Watchword, **including completely new features and minor improvements to existing functionality**. Following these guidelines will help maintainers and the community to understand your suggestion and find related suggestions.
 
-<!-- omit in toc -->
-
 #### Before Submitting an Enhancement
 
 - Make sure that you are using the latest version.
 - Read the [documentation]() carefully and find out if the functionality is already covered, maybe by an individual configuration.
 - Perform a [search](https://github.com/allogarzea/watchword/issues) to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
 - Find out whether your idea fits with the scope and aims of the project. It's up to you to make a strong case to convince the project's developers of the merits of this feature. Keep in mind that we want features that will be useful to the majority of our users and not just a small subset. If you're just targeting a minority of users, consider writing an add-on/plugin library.
-
-<!-- omit in toc -->
 
 #### How Do I Submit a Good Enhancement Suggestion?
 
@@ -162,8 +152,6 @@ Updating, improving and correcting the documentation
 ## Join The Project Team
 
 <!-- TODO -->
-
-<!-- omit in toc -->
 
 ## Attribution
 
