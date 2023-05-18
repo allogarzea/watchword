@@ -4,12 +4,18 @@ exports.createRandomPass = void 0;
 const constants_1 = require("./constants");
 function createRandomPass(passwordParams) {
     const { length, minNumbers, minSpecialCharacters } = passwordParams;
-    const list = [constants_1.upperAlphabet, constants_1.lowerAlphabet, constants_1.numbers, constants_1.specialCharacters];
+    const list = [
+        constants_1.upperAlphabet,
+        constants_1.lowerAlphabet,
+        constants_1.numbers,
+        constants_1.specialCharacters,
+        constants_1.latinCharacters,
+    ];
     const passwordArray = [];
     let numbersAmount = 0;
     let specialCharactersAmount = 0;
     function getItem() {
-        const listSelector = Math.floor(Math.random() * 4);
+        const listSelector = Math.floor(Math.random() * 5);
         const selectedList = list[listSelector];
         const itemSelector = Math.floor(Math.random() * selectedList.length);
         const selectedItem = selectedList[itemSelector];
