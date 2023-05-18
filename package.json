@@ -29,14 +29,14 @@
 		"typescript",
 		"passwordgenerator"
 	],
-	"author": "Gaztea",
+	"author": "Thiago Campos",
 	"license": "GPL-3.0-or-later",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/allogaztea/watchword"
+		"url": "https://github.com/allogarzea/watchword"
 	},
 	"bugs": {
-		"url": "https://github.com/allogaztea/watchword/issues"
+		"url": "https://github.com/allogarzea/watchword/issues"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
