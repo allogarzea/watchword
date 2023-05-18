@@ -2,7 +2,9 @@
 
 ###### par gaztea
 
-Command-Line Password Generator in TypeScript.
+Introducing a versatile TypeScript library that allows you to conveniently **generate secure passwords and create unique usernames** directly from the command-line interface. This comprehensive solution offers robust features for password management and user identification, ensuring a seamless experience.
+
+By using **Watchword**, you can effortlessly generate strong, random passwords tailored to your desired level of complexity and security. Additionally, it enables you to create unique usernames based on customizable patterns, making user identification easier and more efficient. Customization options are available to meet your specific requirements. You can specify the type of password you need, such as alphanumeric, numeric, or special character-based.
 
 ## Installation
 
