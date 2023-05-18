@@ -1,6 +1,6 @@
 # Watchword
 
-###### par gaztea
+###### par garzea
 
 Command-Line Password Generator in TypeScript.
 
@@ -64,6 +64,10 @@ We use [clipboard-sys](https://github.com/udarrr/clipboard-sys) to auto copy the
 
 ## Issues
 
-You can ask for new features, improvements and bug fixes in our [issues tab](https://github.com/allogaztea/watchword/issues)
+You can ask for new features, improvements and bug fixes in our [issues tab](https://github.com/allogarzea/watchword/issues)
 
-You can also check the status of our current issues in our [kanban board](https://github.com/users/allogaztea/projects/1).
+You can also check the status of our current issues in our [kanban board](https://github.com/users/allogarzea/projects/1).
+
+## Rust version
+
+As part of my ongoing learning as a software developer and my growing desire to learn low-level programming languages, I decided to recreate "Watchword" in Rust. It is available in GitHub as [rusted-watchword](https://github.com/allogarzea/rusted-watchword).
