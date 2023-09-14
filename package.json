@@ -33,10 +33,10 @@
 	"license": "GPL-3.0-or-later",
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/allogarzea/watchword"
+		"url": "https://github.com/thigcampos/watchword"
 	},
 	"bugs": {
-		"url": "https://github.com/allogarzea/watchword/issues"
+		"url": "https://github.com/thigcampos/watchword/issues"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
